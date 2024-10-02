@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Repositorio\\PSP\\Tema0\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FB953341-E986-4D4C-AAF0-EA883C1A9BAA}|ProgramacionEsctructurada\\ProgramacionEsctructurada.pyproj|D:\\Repositorio\\PSP\\Tema0\\ProgramacionEsctructurada\\ProgramacionEsctructurada.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{FB953341-E986-4D4C-AAF0-EA883C1A9BAA}|ProgramacionEsctructurada\\ProgramacionEsctructurada.pyproj|solutionrelative:ProgramacionEsctructurada\\ProgramacionEsctructurada.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProgramacionEsctructurada.py",
+              "DocumentMoniker": "D:\\Repositorio\\PSP\\Tema0\\ProgramacionEsctructurada\\ProgramacionEsctructurada.py",
+              "RelativeDocumentMoniker": "ProgramacionEsctructurada\\ProgramacionEsctructurada.py",
+              "ToolTip": "D:\\Repositorio\\PSP\\Tema0\\ProgramacionEsctructurada\\ProgramacionEsctructurada.py",
+              "RelativeToolTip": "ProgramacionEsctructurada\\ProgramacionEsctructurada.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2024-10-02T15:42:59.498Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

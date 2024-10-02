@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35312.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "ProgramacionEsctructurada", "ProgramacionEsctructurada\ProgramacionEsctructurada.pyproj", "{FB953341-E986-4D4C-AAF0-EA883C1A9BAA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FB953341-E986-4D4C-AAF0-EA883C1A9BAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB953341-E986-4D4C-AAF0-EA883C1A9BAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {82755E26-CF36-4B92-AED7-85A3880C2AEA}
+	EndGlobalSection
+EndGlobal
