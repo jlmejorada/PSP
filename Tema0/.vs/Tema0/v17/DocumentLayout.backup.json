@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "D:\\Repositorio\\PSP\\Tema0\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FB953341-E986-4D4C-AAF0-EA883C1A9BAA}|ProgramacionEsctructurada\\ProgramacionEsctructurada.pyproj|D:\\Repositorio\\PSP\\Tema0\\ProgramacionEsctructurada\\ProgramacionEsctructurada.py||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{FB953341-E986-4D4C-AAF0-EA883C1A9BAA}|ProgramacionEsctructurada\\ProgramacionEsctructurada.pyproj|solutionrelative:ProgramacionEsctructurada\\ProgramacionEsctructurada.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{FB953341-E986-4D4C-AAF0-EA883C1A9BAA}|ProgramacionEsctructurada\\ProgramacionEsctructurada.pyproj|D:\\Repositorio\\PSP\\Tema0\\ProgramacionEsctructurada\\ejercicio02\\Ejercicio02.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{FB953341-E986-4D4C-AAF0-EA883C1A9BAA}|ProgramacionEsctructurada\\ProgramacionEsctructurada.pyproj|solutionrelative:ProgramacionEsctructurada\\ejercicio02\\Ejercicio02.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB953341-E986-4D4C-AAF0-EA883C1A9BAA}|ProgramacionEsctructurada\\ProgramacionEsctructurada.pyproj|D:\\Repositorio\\PSP\\Tema0\\ProgramacionEsctructurada\\ejercicio01\\Ejercicio01.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{FB953341-E986-4D4C-AAF0-EA883C1A9BAA}|ProgramacionEsctructurada\\ProgramacionEsctructurada.pyproj|solutionrelative:ProgramacionEsctructurada\\ejercicio01\\Ejercicio01.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,19 +23,28 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ProgramacionEsctructurada.py",
-              "DocumentMoniker": "D:\\Repositorio\\PSP\\Tema0\\ProgramacionEsctructurada\\ProgramacionEsctructurada.py",
-              "RelativeDocumentMoniker": "ProgramacionEsctructurada\\ProgramacionEsctructurada.py",
-              "ToolTip": "D:\\Repositorio\\PSP\\Tema0\\ProgramacionEsctructurada\\ProgramacionEsctructurada.py",
-              "RelativeToolTip": "ProgramacionEsctructurada\\ProgramacionEsctructurada.py",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "Ejercicio02.py",
+              "DocumentMoniker": "D:\\Repositorio\\PSP\\Tema0\\ProgramacionEsctructurada\\ejercicio02\\Ejercicio02.py",
+              "RelativeDocumentMoniker": "ProgramacionEsctructurada\\ejercicio02\\Ejercicio02.py",
+              "ToolTip": "D:\\Repositorio\\PSP\\Tema0\\ProgramacionEsctructurada\\ejercicio02\\Ejercicio02.py",
+              "RelativeToolTip": "ProgramacionEsctructurada\\ejercicio02\\Ejercicio02.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-              "WhenOpened": "2024-10-02T15:42:59.498Z",
+              "WhenOpened": "2024-10-02T16:05:07.743Z",
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Ejercicio01.py",
+              "DocumentMoniker": "D:\\Repositorio\\PSP\\Tema0\\ProgramacionEsctructurada\\Ejercicio01\\Ejercicio01.py",
+              "RelativeDocumentMoniker": "ProgramacionEsctructurada\\Ejercicio01\\Ejercicio01.py",
+              "ToolTip": "D:\\Repositorio\\PSP\\Tema0\\ProgramacionEsctructurada\\Ejercicio01\\Ejercicio01.py",
+              "RelativeToolTip": "ProgramacionEsctructurada\\Ejercicio01\\Ejercicio01.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2024-10-02T15:48:39.449Z",
+              "EditorCaption": ""
             }
           ]
         }
