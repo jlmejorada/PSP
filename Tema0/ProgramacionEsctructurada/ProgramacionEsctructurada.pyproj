@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>fb953341-e986-4d4c-aaf0-ea883c1a9baa</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>ejercicio02\Ejercicio02.py</StartupFile>
+    <StartupFile>ejercicio03\Ejercicio03.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -23,10 +23,12 @@
   <ItemGroup>
     <Folder Include="ejercicio01\" />
     <Folder Include="ejercicio02\" />
+    <Folder Include="ejercicio03\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ejercicio01\Ejercicio01.py" />
     <Compile Include="ejercicio02\Ejercicio02.py" />
+    <Compile Include="ejercicio03\Ejercicio03.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
