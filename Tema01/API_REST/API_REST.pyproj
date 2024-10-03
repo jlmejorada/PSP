@@ -23,6 +23,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="ejemplos\" />
+    <Folder Include="ejercicio01\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ejemplos\Ejemplo01.py" />
