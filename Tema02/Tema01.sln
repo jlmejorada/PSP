@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35312.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "API_REST", "API_REST\API_REST.pyproj", "{2A3B2AB3-D472-4582-A11A-A2857CAF1CC9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2A3B2AB3-D472-4582-A11A-A2857CAF1CC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A3B2AB3-D472-4582-A11A-A2857CAF1CC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B65BBC47-A87E-4AD4-A720-CB0A620C5526}
+	EndGlobalSection
+EndGlobal
