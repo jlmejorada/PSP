@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Repositorio\\PSP\\Tema0\\",
+  "WorkspaceRootPath": "C:\\Users\\jlmejorada\\Desktop\\Repositorios\\PSP\\Tema0\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FB953341-E986-4D4C-AAF0-EA883C1A9BAA}|ProgramacionEsctructurada\\ProgramacionEsctructurada.pyproj|D:\\Repositorio\\PSP\\Tema0\\ProgramacionEsctructurada\\ejercicio03\\Ejercicio03.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "AbsoluteMoniker": "D:0:0:{FB953341-E986-4D4C-AAF0-EA883C1A9BAA}|ProgramacionEsctructurada\\ProgramacionEsctructurada.pyproj|C:\\Users\\jlmejorada\\Desktop\\Repositorios\\PSP\\Tema0\\ProgramacionEsctructurada\\ejercicio03\\Ejercicio03.py||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{FB953341-E986-4D4C-AAF0-EA883C1A9BAA}|ProgramacionEsctructurada\\ProgramacionEsctructurada.pyproj|solutionrelative:ProgramacionEsctructurada\\ejercicio03\\Ejercicio03.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FB953341-E986-4D4C-AAF0-EA883C1A9BAA}|ProgramacionEsctructurada\\ProgramacionEsctructurada.pyproj|D:\\Repositorio\\PSP\\Tema0\\ProgramacionEsctructurada\\ejercicio02\\Ejercicio02.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "AbsoluteMoniker": "D:0:0:{FB953341-E986-4D4C-AAF0-EA883C1A9BAA}|ProgramacionEsctructurada\\ProgramacionEsctructurada.pyproj|C:\\Users\\jlmejorada\\Desktop\\Repositorios\\PSP\\Tema0\\ProgramacionEsctructurada\\ejercicio02\\Ejercicio02.py||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{FB953341-E986-4D4C-AAF0-EA883C1A9BAA}|ProgramacionEsctructurada\\ProgramacionEsctructurada.pyproj|solutionrelative:ProgramacionEsctructurada\\ejercicio02\\Ejercicio02.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
@@ -24,24 +24,23 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Ejercicio02.py",
-              "DocumentMoniker": "D:\\Repositorio\\PSP\\Tema0\\ProgramacionEsctructurada\\ejercicio02\\Ejercicio02.py",
+              "DocumentMoniker": "C:\\Users\\jlmejorada\\Desktop\\Repositorios\\PSP\\Tema0\\ProgramacionEsctructurada\\ejercicio02\\Ejercicio02.py",
               "RelativeDocumentMoniker": "ProgramacionEsctructurada\\ejercicio02\\Ejercicio02.py",
-              "ToolTip": "D:\\Repositorio\\PSP\\Tema0\\ProgramacionEsctructurada\\ejercicio02\\Ejercicio02.py",
+              "ToolTip": "C:\\Users\\jlmejorada\\Desktop\\Repositorios\\PSP\\Tema0\\ProgramacionEsctructurada\\ejercicio02\\Ejercicio02.py",
               "RelativeToolTip": "ProgramacionEsctructurada\\ejercicio02\\Ejercicio02.py",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-              "WhenOpened": "2024-10-02T16:46:07.921Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-02T16:46:07.921Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Ejercicio03.py",
-              "DocumentMoniker": "D:\\Repositorio\\PSP\\Tema0\\ProgramacionEsctructurada\\ejercicio03\\Ejercicio03.py",
+              "DocumentMoniker": "C:\\Users\\jlmejorada\\Desktop\\Repositorios\\PSP\\Tema0\\ProgramacionEsctructurada\\ejercicio03\\Ejercicio03.py",
               "RelativeDocumentMoniker": "ProgramacionEsctructurada\\ejercicio03\\Ejercicio03.py",
-              "ToolTip": "D:\\Repositorio\\PSP\\Tema0\\ProgramacionEsctructurada\\ejercicio03\\Ejercicio03.py",
+              "ToolTip": "C:\\Users\\jlmejorada\\Desktop\\Repositorios\\PSP\\Tema0\\ProgramacionEsctructurada\\ejercicio03\\Ejercicio03.py",
               "RelativeToolTip": "ProgramacionEsctructurada\\ejercicio03\\Ejercicio03.py",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
               "WhenOpened": "2024-10-02T16:25:02.731Z",
               "EditorCaption": ""
