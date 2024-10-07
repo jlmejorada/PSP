@@ -4,8 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>2a3b2ab3-d472-4582-a11a-a2857caf1cc9</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>
-    </StartupFile>
+    <StartupFile>flask\Ejemplo01.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -24,11 +23,13 @@
   <ItemGroup>
     <Folder Include="ejemplos\" />
     <Folder Include="ejercicio01\" />
+    <Folder Include="flask\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ejemplos\Ejemplo01.py" />
     <Compile Include="ejemplos\Ejemplo02.py" />
     <Compile Include="ejemplos\Ejemplo03.py" />
+    <Compile Include="flask\Ejemplo01.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
