@@ -1,0 +1,153 @@
+<html>
+<head>
+<title>api.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #5c6370;}
+.s1 { color: #bbbbbb;}
+.s2 { color: #d55fde;}
+.s3 { color: #89ca78;}
+.s4 { color: #d19a66;}
+</style>
+</head>
+<body bgcolor="#282c34">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+api.py</font>
+</center></td></tr></table>
+<pre><span class="s0"># coding: latin1</span>
+
+<span class="s2">from </span><span class="s1">flask </span><span class="s2">import </span><span class="s1">*</span>
+
+<span class="s1">app = Flask(__name__)</span>
+
+<span class="s0"># Lista de directores</span>
+<span class="s1">directores = [</span>
+    <span class="s1">{</span><span class="s3">&quot;Id&quot;</span><span class="s1">: </span><span class="s4">1</span><span class="s1">, </span><span class="s3">&quot;DNI&quot;</span><span class="s1">: </span><span class="s3">&quot;12345678A&quot;</span><span class="s1">, </span><span class="s3">&quot;Nombre&quot;</span><span class="s1">: </span><span class="s3">&quot;Carlos&quot;</span><span class="s1">, </span><span class="s3">&quot;Apellidos&quot;</span><span class="s1">: </span><span class="s3">&quot;Pérez&quot;</span><span class="s1">, </span><span class="s3">&quot;email&quot;</span><span class="s1">: </span><span class="s3">&quot;carlos.perez@example.com&quot;</span><span class="s1">},</span>
+    <span class="s1">{</span><span class="s3">&quot;Id&quot;</span><span class="s1">: </span><span class="s4">2</span><span class="s1">, </span><span class="s3">&quot;DNI&quot;</span><span class="s1">: </span><span class="s3">&quot;23456789B&quot;</span><span class="s1">, </span><span class="s3">&quot;Nombre&quot;</span><span class="s1">: </span><span class="s3">&quot;Ana&quot;</span><span class="s1">, </span><span class="s3">&quot;Apellidos&quot;</span><span class="s1">: </span><span class="s3">&quot;Gómez&quot;</span><span class="s1">, </span><span class="s3">&quot;email&quot;</span><span class="s1">: </span><span class="s3">&quot;ana.gomez@example.com&quot;</span><span class="s1">},</span>
+    <span class="s1">{</span><span class="s3">&quot;Id&quot;</span><span class="s1">: </span><span class="s4">3</span><span class="s1">, </span><span class="s3">&quot;DNI&quot;</span><span class="s1">: </span><span class="s3">&quot;34567890C&quot;</span><span class="s1">, </span><span class="s3">&quot;Nombre&quot;</span><span class="s1">: </span><span class="s3">&quot;Miguel&quot;</span><span class="s1">, </span><span class="s3">&quot;Apellidos&quot;</span><span class="s1">: </span><span class="s3">&quot;Martínez&quot;</span><span class="s1">, </span><span class="s3">&quot;email&quot;</span><span class="s1">: </span><span class="s3">&quot;miguel.martinez@example.com&quot;</span><span class="s1">},</span>
+    <span class="s1">{</span><span class="s3">&quot;Id&quot;</span><span class="s1">: </span><span class="s4">4</span><span class="s1">, </span><span class="s3">&quot;DNI&quot;</span><span class="s1">: </span><span class="s3">&quot;45678901D&quot;</span><span class="s1">, </span><span class="s3">&quot;Nombre&quot;</span><span class="s1">: </span><span class="s3">&quot;Lucía&quot;</span><span class="s1">, </span><span class="s3">&quot;Apellidos&quot;</span><span class="s1">: </span><span class="s3">&quot;Fernández&quot;</span><span class="s1">, </span><span class="s3">&quot;email&quot;</span><span class="s1">: </span><span class="s3">&quot;lucia.fernandez@example.com&quot;</span><span class="s1">},</span>
+    <span class="s1">{</span><span class="s3">&quot;Id&quot;</span><span class="s1">: </span><span class="s4">5</span><span class="s1">, </span><span class="s3">&quot;DNI&quot;</span><span class="s1">: </span><span class="s3">&quot;56789012E&quot;</span><span class="s1">, </span><span class="s3">&quot;Nombre&quot;</span><span class="s1">: </span><span class="s3">&quot;David&quot;</span><span class="s1">, </span><span class="s3">&quot;Apellidos&quot;</span><span class="s1">: </span><span class="s3">&quot;Ruiz&quot;</span><span class="s1">, </span><span class="s3">&quot;email&quot;</span><span class="s1">: </span><span class="s3">&quot;david.ruiz@example.com&quot;</span><span class="s1">},</span>
+    <span class="s1">{</span><span class="s3">&quot;Id&quot;</span><span class="s1">: </span><span class="s4">6</span><span class="s1">, </span><span class="s3">&quot;DNI&quot;</span><span class="s1">: </span><span class="s3">&quot;67890123F&quot;</span><span class="s1">, </span><span class="s3">&quot;Nombre&quot;</span><span class="s1">: </span><span class="s3">&quot;Sara&quot;</span><span class="s1">, </span><span class="s3">&quot;Apellidos&quot;</span><span class="s1">: </span><span class="s3">&quot;Hernández&quot;</span><span class="s1">, </span><span class="s3">&quot;email&quot;</span><span class="s1">: </span><span class="s3">&quot;sara.hernandez@example.com&quot;</span><span class="s1">},</span>
+    <span class="s1">{</span><span class="s3">&quot;Id&quot;</span><span class="s1">: </span><span class="s4">7</span><span class="s1">, </span><span class="s3">&quot;DNI&quot;</span><span class="s1">: </span><span class="s3">&quot;78901234G&quot;</span><span class="s1">, </span><span class="s3">&quot;Nombre&quot;</span><span class="s1">: </span><span class="s3">&quot;Jorge&quot;</span><span class="s1">, </span><span class="s3">&quot;Apellidos&quot;</span><span class="s1">: </span><span class="s3">&quot;López&quot;</span><span class="s1">, </span><span class="s3">&quot;email&quot;</span><span class="s1">: </span><span class="s3">&quot;jorge.lopez@example.com&quot;</span><span class="s1">},</span>
+    <span class="s1">{</span><span class="s3">&quot;Id&quot;</span><span class="s1">: </span><span class="s4">8</span><span class="s1">, </span><span class="s3">&quot;DNI&quot;</span><span class="s1">: </span><span class="s3">&quot;89012345H&quot;</span><span class="s1">, </span><span class="s3">&quot;Nombre&quot;</span><span class="s1">: </span><span class="s3">&quot;Elena&quot;</span><span class="s1">, </span><span class="s3">&quot;Apellidos&quot;</span><span class="s1">: </span><span class="s3">&quot;Sánchez&quot;</span><span class="s1">, </span><span class="s3">&quot;email&quot;</span><span class="s1">: </span><span class="s3">&quot;elena.sanchez@example.com&quot;</span><span class="s1">},</span>
+    <span class="s1">{</span><span class="s3">&quot;Id&quot;</span><span class="s1">: </span><span class="s4">9</span><span class="s1">, </span><span class="s3">&quot;DNI&quot;</span><span class="s1">: </span><span class="s3">&quot;90123456I&quot;</span><span class="s1">, </span><span class="s3">&quot;Nombre&quot;</span><span class="s1">: </span><span class="s3">&quot;Fernando&quot;</span><span class="s1">, </span><span class="s3">&quot;Apellidos&quot;</span><span class="s1">: </span><span class="s3">&quot;García&quot;</span><span class="s1">, </span><span class="s3">&quot;email&quot;</span><span class="s1">: </span><span class="s3">&quot;fernando.garcia@example.com&quot;</span><span class="s1">},</span>
+    <span class="s1">{</span><span class="s3">&quot;Id&quot;</span><span class="s1">: </span><span class="s4">10</span><span class="s1">, </span><span class="s3">&quot;DNI&quot;</span><span class="s1">: </span><span class="s3">&quot;01234567J&quot;</span><span class="s1">, </span><span class="s3">&quot;Nombre&quot;</span><span class="s1">: </span><span class="s3">&quot;Marta&quot;</span><span class="s1">, </span><span class="s3">&quot;Apellidos&quot;</span><span class="s1">: </span><span class="s3">&quot;Rodríguez&quot;</span><span class="s1">, </span><span class="s3">&quot;email&quot;</span><span class="s1">: </span><span class="s3">&quot;marta.rodriguez@example.com&quot;</span><span class="s1">}</span>
+<span class="s1">]</span>
+
+<span class="s0"># Lista de supermercados</span>
+<span class="s1">supermercados = [</span>
+    <span class="s1">{</span><span class="s3">&quot;Id&quot;</span><span class="s1">: </span><span class="s4">1</span><span class="s1">, </span><span class="s3">&quot;Fecha&quot;</span><span class="s1">: </span><span class="s3">&quot;2020-01-10&quot;</span><span class="s1">, </span><span class="s3">&quot;Superficie&quot;</span><span class="s1">: </span><span class="s4">1500</span><span class="s1">, </span><span class="s3">&quot;Dirección&quot;</span><span class="s1">: </span><span class="s3">&quot;Calle A, 1&quot;</span><span class="s1">, </span><span class="s3">&quot;Régimen&quot;</span><span class="s1">: </span><span class="s3">&quot;Propio&quot;</span><span class="s1">,</span>
+     <span class="s3">&quot;IdDirector&quot;</span><span class="s1">: </span><span class="s4">1</span><span class="s1">},</span>
+    <span class="s1">{</span><span class="s3">&quot;Id&quot;</span><span class="s1">: </span><span class="s4">2</span><span class="s1">, </span><span class="s3">&quot;Fecha&quot;</span><span class="s1">: </span><span class="s3">&quot;2021-02-15&quot;</span><span class="s1">, </span><span class="s3">&quot;Superficie&quot;</span><span class="s1">: </span><span class="s4">2000</span><span class="s1">, </span><span class="s3">&quot;Dirección&quot;</span><span class="s1">: </span><span class="s3">&quot;Calle B, 2&quot;</span><span class="s1">, </span><span class="s3">&quot;Régimen&quot;</span><span class="s1">: </span><span class="s3">&quot;Franquicia&quot;</span><span class="s1">,</span>
+     <span class="s3">&quot;IdDirector&quot;</span><span class="s1">: </span><span class="s4">2</span><span class="s1">},</span>
+    <span class="s1">{</span><span class="s3">&quot;Id&quot;</span><span class="s1">: </span><span class="s4">3</span><span class="s1">, </span><span class="s3">&quot;Fecha&quot;</span><span class="s1">: </span><span class="s3">&quot;2019-03-20&quot;</span><span class="s1">, </span><span class="s3">&quot;Superficie&quot;</span><span class="s1">: </span><span class="s4">1800</span><span class="s1">, </span><span class="s3">&quot;Dirección&quot;</span><span class="s1">: </span><span class="s3">&quot;Calle C, 3&quot;</span><span class="s1">, </span><span class="s3">&quot;Régimen&quot;</span><span class="s1">: </span><span class="s3">&quot;Propio&quot;</span><span class="s1">,</span>
+     <span class="s3">&quot;IdDirector&quot;</span><span class="s1">: </span><span class="s4">3</span><span class="s1">},</span>
+    <span class="s1">{</span><span class="s3">&quot;Id&quot;</span><span class="s1">: </span><span class="s4">4</span><span class="s1">, </span><span class="s3">&quot;Fecha&quot;</span><span class="s1">: </span><span class="s3">&quot;2020-04-25&quot;</span><span class="s1">, </span><span class="s3">&quot;Superficie&quot;</span><span class="s1">: </span><span class="s4">2200</span><span class="s1">, </span><span class="s3">&quot;Dirección&quot;</span><span class="s1">: </span><span class="s3">&quot;Calle D, 4&quot;</span><span class="s1">, </span><span class="s3">&quot;Régimen&quot;</span><span class="s1">: </span><span class="s3">&quot;Franquicia&quot;</span><span class="s1">,</span>
+     <span class="s3">&quot;IdDirector&quot;</span><span class="s1">: </span><span class="s4">4</span><span class="s1">},</span>
+    <span class="s1">{</span><span class="s3">&quot;Id&quot;</span><span class="s1">: </span><span class="s4">5</span><span class="s1">, </span><span class="s3">&quot;Fecha&quot;</span><span class="s1">: </span><span class="s3">&quot;2022-05-30&quot;</span><span class="s1">, </span><span class="s3">&quot;Superficie&quot;</span><span class="s1">: </span><span class="s4">1700</span><span class="s1">, </span><span class="s3">&quot;Dirección&quot;</span><span class="s1">: </span><span class="s3">&quot;Calle E, 5&quot;</span><span class="s1">, </span><span class="s3">&quot;Régimen&quot;</span><span class="s1">: </span><span class="s3">&quot;Propio&quot;</span><span class="s1">,</span>
+     <span class="s3">&quot;IdDirector&quot;</span><span class="s1">: </span><span class="s4">5</span><span class="s1">},</span>
+    <span class="s1">{</span><span class="s3">&quot;Id&quot;</span><span class="s1">: </span><span class="s4">6</span><span class="s1">, </span><span class="s3">&quot;Fecha&quot;</span><span class="s1">: </span><span class="s3">&quot;2018-06-05&quot;</span><span class="s1">, </span><span class="s3">&quot;Superficie&quot;</span><span class="s1">: </span><span class="s4">1900</span><span class="s1">, </span><span class="s3">&quot;Dirección&quot;</span><span class="s1">: </span><span class="s3">&quot;Calle F, 6&quot;</span><span class="s1">, </span><span class="s3">&quot;Régimen&quot;</span><span class="s1">: </span><span class="s3">&quot;Franquicia&quot;</span><span class="s1">,</span>
+     <span class="s3">&quot;IdDirector&quot;</span><span class="s1">: </span><span class="s4">6</span><span class="s1">},</span>
+    <span class="s1">{</span><span class="s3">&quot;Id&quot;</span><span class="s1">: </span><span class="s4">7</span><span class="s1">, </span><span class="s3">&quot;Fecha&quot;</span><span class="s1">: </span><span class="s3">&quot;2020-07-10&quot;</span><span class="s1">, </span><span class="s3">&quot;Superficie&quot;</span><span class="s1">: </span><span class="s4">1600</span><span class="s1">, </span><span class="s3">&quot;Dirección&quot;</span><span class="s1">: </span><span class="s3">&quot;Calle G, 7&quot;</span><span class="s1">, </span><span class="s3">&quot;Régimen&quot;</span><span class="s1">: </span><span class="s3">&quot;Propio&quot;</span><span class="s1">,</span>
+     <span class="s3">&quot;IdDirector&quot;</span><span class="s1">: </span><span class="s4">7</span><span class="s1">},</span>
+    <span class="s1">{</span><span class="s3">&quot;Id&quot;</span><span class="s1">: </span><span class="s4">8</span><span class="s1">, </span><span class="s3">&quot;Fecha&quot;</span><span class="s1">: </span><span class="s3">&quot;2021-08-15&quot;</span><span class="s1">, </span><span class="s3">&quot;Superficie&quot;</span><span class="s1">: </span><span class="s4">2100</span><span class="s1">, </span><span class="s3">&quot;Dirección&quot;</span><span class="s1">: </span><span class="s3">&quot;Calle H, 8&quot;</span><span class="s1">, </span><span class="s3">&quot;Régimen&quot;</span><span class="s1">: </span><span class="s3">&quot;Franquicia&quot;</span><span class="s1">,</span>
+     <span class="s3">&quot;IdDirector&quot;</span><span class="s1">: </span><span class="s4">8</span><span class="s1">},</span>
+    <span class="s1">{</span><span class="s3">&quot;Id&quot;</span><span class="s1">: </span><span class="s4">9</span><span class="s1">, </span><span class="s3">&quot;Fecha&quot;</span><span class="s1">: </span><span class="s3">&quot;2019-09-20&quot;</span><span class="s1">, </span><span class="s3">&quot;Superficie&quot;</span><span class="s1">: </span><span class="s4">2300</span><span class="s1">, </span><span class="s3">&quot;Dirección&quot;</span><span class="s1">: </span><span class="s3">&quot;Calle I, 9&quot;</span><span class="s1">, </span><span class="s3">&quot;Régimen&quot;</span><span class="s1">: </span><span class="s3">&quot;Propio&quot;</span><span class="s1">,</span>
+     <span class="s3">&quot;IdDirector&quot;</span><span class="s1">: </span><span class="s4">9</span><span class="s1">},</span>
+    <span class="s1">{</span><span class="s3">&quot;Id&quot;</span><span class="s1">: </span><span class="s4">10</span><span class="s1">, </span><span class="s3">&quot;Fecha&quot;</span><span class="s1">: </span><span class="s3">&quot;2022-10-25&quot;</span><span class="s1">, </span><span class="s3">&quot;Superficie&quot;</span><span class="s1">: </span><span class="s4">2500</span><span class="s1">, </span><span class="s3">&quot;Dirección&quot;</span><span class="s1">: </span><span class="s3">&quot;Calle J, 10&quot;</span><span class="s1">, </span><span class="s3">&quot;Régimen&quot;</span><span class="s1">: </span><span class="s3">&quot;Franquicia&quot;</span><span class="s1">,</span>
+     <span class="s3">&quot;IdDirector&quot;</span><span class="s1">: </span><span class="s4">10</span><span class="s1">}</span>
+<span class="s1">]</span>
+
+
+<span class="s1">@app.route(</span><span class="s3">'/'</span><span class="s1">)</span>
+<span class="s2">def </span><span class="s1">index():</span>
+    <span class="s2">return </span><span class="s3">'Hola a todos! uWu'</span>
+
+
+<span class="s1">@app.get(</span><span class="s3">&quot;/directores&quot;</span><span class="s1">)</span>
+<span class="s2">def </span><span class="s1">get_directores():</span>
+    <span class="s2">return </span><span class="s1">jsonify(directores)</span>
+
+
+<span class="s1">@app.get(</span><span class="s3">&quot;/directores/&lt;int:id&gt;&quot;</span><span class="s1">)</span>
+<span class="s2">def </span><span class="s1">get_director(id):</span>
+    <span class="s2">for </span><span class="s1">director </span><span class="s2">in </span><span class="s1">directores:</span>
+        <span class="s2">if </span><span class="s1">director[</span><span class="s3">&quot;Id&quot;</span><span class="s1">] == id:</span>
+            <span class="s2">return </span><span class="s1">director, </span><span class="s4">200</span>
+        <span class="s2">else</span><span class="s1">:</span>
+            <span class="s2">return </span><span class="s1">{</span><span class="s3">&quot;error&quot;</span><span class="s1">: </span><span class="s3">&quot;director not found&quot;</span><span class="s1">}, </span><span class="s4">404</span>
+
+
+<span class="s2">def </span><span class="s1">findNextIdDir():</span>
+    <span class="s2">return </span><span class="s1">max(director[</span><span class="s3">&quot;Id&quot;</span><span class="s1">] </span><span class="s2">for </span><span class="s1">director </span><span class="s2">in </span><span class="s1">directores) + </span><span class="s4">1</span>
+
+
+<span class="s1">@app.post(</span><span class="s3">&quot;/directores&quot;</span><span class="s1">)</span>
+<span class="s2">def </span><span class="s1">add_director():</span>
+    <span class="s2">if </span><span class="s1">request.is_json:</span>
+        <span class="s1">director = request.get_json()</span>
+        <span class="s1">director[</span><span class="s3">&quot;Id&quot;</span><span class="s1">] = findNextIdDir()</span>
+        <span class="s1">directores.append(director)</span>
+        <span class="s2">return </span><span class="s1">director, </span><span class="s4">201</span>
+    <span class="s2">else</span><span class="s1">:</span>
+        <span class="s2">return </span><span class="s1">{</span><span class="s3">&quot;error&quot;</span><span class="s1">: </span><span class="s3">&quot;Request must be JSON&quot;</span><span class="s1">}, </span><span class="s4">415</span>
+
+<span class="s1">@app.put(</span><span class="s3">&quot;/directores/&lt;int:id&gt;&quot;</span><span class="s1">)</span>
+<span class="s1">@app.patch(</span><span class="s3">&quot;/directores/&lt;int:id&gt;&quot;</span><span class="s1">)</span>
+<span class="s2">def </span><span class="s1">update_director(id):</span>
+    <span class="s2">if </span><span class="s1">request.is_json:</span>
+        <span class="s1">newDirector = request.get_json()</span>
+        <span class="s2">for </span><span class="s1">director </span><span class="s2">in </span><span class="s1">directores:</span>
+            <span class="s2">if </span><span class="s1">director[</span><span class="s3">&quot;Id&quot;</span><span class="s1">] == id:</span>
+                <span class="s2">for </span><span class="s1">element </span><span class="s2">in </span><span class="s1">newDirector:</span>
+                    <span class="s1">director[element] = newDirector[element]</span>
+                <span class="s2">return </span>
+
+
+<span class="s1">@app.get(</span><span class="s3">&quot;/supermercados&quot;</span><span class="s1">)</span>
+<span class="s2">def </span><span class="s1">get_supermercados():</span>
+    <span class="s2">return </span><span class="s1">jsonify(supermercados)</span>
+
+
+<span class="s1">@app.get(</span><span class="s3">&quot;/supermercados/&lt;int:id&gt;&quot;</span><span class="s1">)</span>
+<span class="s2">def </span><span class="s1">get_supermercado(id):</span>
+    <span class="s2">for </span><span class="s1">supermercado </span><span class="s2">in </span><span class="s1">supermercados:</span>
+        <span class="s2">if </span><span class="s1">supermercado[</span><span class="s3">&quot;Id&quot;</span><span class="s1">] == id:</span>
+            <span class="s2">return </span><span class="s1">supermercado, </span><span class="s4">200</span>
+        <span class="s2">else</span><span class="s1">:</span>
+            <span class="s2">return </span><span class="s1">{</span><span class="s3">&quot;error&quot;</span><span class="s1">: </span><span class="s3">&quot;supermercado not found&quot;</span><span class="s1">}, </span><span class="s4">404</span>
+
+
+<span class="s2">def </span><span class="s1">findNextIdSuper():</span>
+    <span class="s2">return </span><span class="s1">max(supermercado[</span><span class="s3">&quot;Id&quot;</span><span class="s1">] </span><span class="s2">for </span><span class="s1">supermercado </span><span class="s2">in </span><span class="s1">supermercados) + </span><span class="s4">1</span>
+
+
+<span class="s1">@app.post(</span><span class="s3">&quot;/supermercados&quot;</span><span class="s1">)</span>
+<span class="s2">def </span><span class="s1">add_supermercado():</span>
+    <span class="s2">if </span><span class="s1">request.is_json:</span>
+        <span class="s1">supermercado = request.get_json()</span>
+        <span class="s1">supermercado[</span><span class="s3">&quot;Id&quot;</span><span class="s1">] = findNextIdSuper()</span>
+        <span class="s1">supermercados.append(supermercado)</span>
+        <span class="s2">return </span><span class="s1">supermercado, </span><span class="s4">201</span>
+    <span class="s2">else</span><span class="s1">:</span>
+        <span class="s2">return </span><span class="s1">{</span><span class="s3">&quot;error&quot;</span><span class="s1">: </span><span class="s3">&quot;Request must be JSON&quot;</span><span class="s1">}, </span><span class="s4">415</span>
+
+<span class="s1">@app.put(</span><span class="s3">&quot;/supermercados/&lt;int:id&gt;&quot;</span><span class="s1">)</span>
+<span class="s1">@app.patch(</span><span class="s3">&quot;/supermercados/&lt;int:id&gt;&quot;</span><span class="s1">)</span>
+<span class="s2">def </span><span class="s1">update_supermercado(id):</span>
+    <span class="s2">if </span><span class="s1">request.is_json:</span>
+        <span class="s1">newSupermercado = request.get_json()</span>
+        <span class="s2">for </span><span class="s1">supermercado </span><span class="s2">in </span><span class="s1">supermercados:</span>
+            <span class="s2">if </span><span class="s1">supermercado[</span><span class="s3">&quot;Id&quot;</span><span class="s1">] == id:</span>
+                <span class="s2">for </span><span class="s1">element </span><span class="s2">in </span><span class="s1">newSupermercado:</span>
+                    <span class="s1">supermercado[element] = newSupermercado[element]</span>
+                <span class="s2">return</span>
+
+<span class="s2">if </span><span class="s1">__name__ == </span><span class="s3">'__main__'</span><span class="s1">:</span>
+    <span class="s1">app.run(debug=</span><span class="s2">True</span><span class="s1">, host=</span><span class="s3">'0.0.0.0'</span><span class="s1">, port=</span><span class="s4">5050</span><span class="s1">)</span>
+
+</pre>
+</body>
+</html>

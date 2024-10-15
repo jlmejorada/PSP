@@ -54,23 +54,23 @@ def get_directores():
 
 
 @app.get("/directores/<int:id>")
-def get_directores(id):
+def get_director(id):
     for director in directores:
-        if director["id"] == id:
+        if director["Id"] == id:
             return director, 200
         else:
             return {"error": "director not found"}, 404
 
 
 def findNextIdDir():
-    return max(director["id"] for director in directores) + 1
+    return max(director["Id"] for director in directores) + 1
 
 
 @app.post("/directores")
 def add_director():
     if request.is_json:
         director = request.get_json()
-        director["id"] = findNextIdDir()
+        director["Id"] = findNextIdDir()
         directores.append(director)
         return director, 201
     else:
@@ -82,7 +82,7 @@ def update_director(id):
     if request.is_json:
         newDirector = request.get_json()
         for director in directores:
-            if director["Id"] == Id:
+            if director["Id"] == id:
                 for element in newDirector:
                     director[element] = newDirector[element]
                 return 
@@ -94,27 +94,38 @@ def get_supermercados():
 
 
 @app.get("/supermercados/<int:id>")
-def get_supermercados(id):
+def get_supermercado(id):
     for supermercado in supermercados:
-        if supermercado["id"] == id:
+        if supermercado["Id"] == id:
             return supermercado, 200
         else:
             return {"error": "supermercado not found"}, 404
 
 
 def findNextIdSuper():
-    return max(supermercado["id"] for supermercado in supermercados) + 1
+    return max(supermercado["Id"] for supermercado in supermercados) + 1
 
 
 @app.post("/supermercados")
 def add_supermercado():
     if request.is_json:
         supermercado = request.get_json()
-        supermercado["id"] = findNextIdSuper()
+        supermercado["Id"] = findNextIdSuper()
         supermercados.append(supermercado)
         return supermercado, 201
     else:
         return {"error": "Request must be JSON"}, 415
+
+@app.put("/supermercados/<int:id>")
+@app.patch("/supermercados/<int:id>")
+def update_supermercado(id):
+    if request.is_json:
+        newSupermercado = request.get_json()
+        for supermercado in supermercados:
+            if supermercado["Id"] == id:
+                for element in newSupermercado:
+                    supermercado[element] = newSupermercado[element]
+                return
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5050)
