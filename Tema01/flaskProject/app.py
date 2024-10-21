@@ -28,9 +28,6 @@ def get_country(id):
         else:
             return {"error":"Country not found"}, 404
 
-def findNextId():
-    return max(country["id"] for country in countries) + 1
-
 @app.post("/countries")
 
 def add_country():
@@ -42,6 +39,8 @@ def add_country():
     else:
         return {"error":"Request must be JSON"}, 415
 
+def findNextId():
+    return max(country["id"] for country in countries) + 1
 
 if __name__ == '__main__':
 
