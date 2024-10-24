@@ -1,12 +1,14 @@
 from flask import Blueprint, jsonify, request
 
+from ficheroYAnidamiento.app import cities
 from ficheroYAnidamiento.app.ficheros.leer_escribir import escribeFichero, leeFichero
 from ficheroYAnidamiento.app.ficheros.leer_escribir import escribeFichero, leeFichero
-from flaskProject.app import findNextId
+from flaskProject.app import findNextId, countries
 
 countriesBP = Blueprint('countries', __name__)
 
 ruta="ficheroYAnidamiento/app/ficheros/countries.json"
+rutaCities="ficheroYAnidamiento/app/ficheros/cities.json"
 
 @countriesBP.get('/')
 def get_countries():
@@ -20,6 +22,18 @@ def get_country(id):
         if country['id'] == id:
             return country, 200
     return {"error": "Country not found"}, 404
+
+@countriesBP.get("/<int:id>/cities")
+def get_countries_cities(id):
+    list = []
+    cities = leeFichero(rutaCities)
+    for city in cities:
+        if city['idCountry'] == id:
+            list.append(city)
+    if len(list) > 0:
+        return list, 200
+    else:
+        return {"error": "No hay cities para esa country"}, 404
 
 @countriesBP.post('/')
 def add_country():

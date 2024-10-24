@@ -1,0 +1,22 @@
+[
+    {"Id": 1,
+      "DNI": "12345678A",
+      "Nombre": "Carlos",
+      "Apellidos": "Pérez",
+      "email": "carlos.perez@example.com"},
+    {"Id": 2,
+      "DNI": "23456789B",
+      "Nombre": "Ana",
+      "Apellidos": "Gómez",
+      "email": "ana.gomez@example.com"},
+    {"Id": 3,
+      "DNI": "34567890C",
+      "Nombre": "Miguel",
+      "Apellidos": "Martínez",
+      "email": "miguel.martinez@example.com"},
+    {"Id": 4,
+      "DNI": "45678901D",
+      "Nombre": "Lucía",
+      "Apellidos": "Fernández",
+      "email": "lucia.fernandez@example.com"}
+]

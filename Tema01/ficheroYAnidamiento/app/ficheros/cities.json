@@ -1,10 +1,26 @@
 [
   {
+    "id": 1,
     "area": 10539000,
-    "name": "Bangkok"
+    "name": "Bangkok",
+    "idCountry": 1
   },
   {
+    "id": 2,
     "poblacion": 386000,
-    "name": "Canberra"
+    "name": "Canberra",
+    "idCountry": 2
+  },
+  {
+    "id": 3,
+    "poblacion": 428093,
+    "name": "Madrid",
+    "idCountry": 3
+  },
+  {
+    "id": 4,
+    "poblacion": 34534,
+    "name": "Jerez",
+    "idCountry": 3
   }
 ]

@@ -2,6 +2,7 @@ from urllib import request
 
 from flask import Blueprint,jsonify
 
+from ficheroYAnidamiento.app import cities
 from ficheroYAnidamiento.app.ficheros.leer_escribir import *
 
 ruta="ficheroYAnidamiento/app/ficheros/cities.json"
