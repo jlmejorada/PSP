@@ -1,6 +1,8 @@
-from urllib import request
+from flask import Blueprint, jsonify, request
+from flask_jwt_extended import jwt_required
 
-from flask import Blueprint,jsonify
+
+from app import supermercados
 from app.ficheros.leer_escribir import *
 
 ruta="app/ficheros/supermercados.json"
@@ -21,15 +23,41 @@ def get_supermercado(Id):
     return {"error": "supermercado not found"}, 404
 
 @supermercadosBP.post('/')
+@jwt_required()
 def add_supermercado():
     supermercados = leeFichero(ruta)
     if request.is_json:
         supermercado = request.get_json()
         supermercado['Id'] = findNextId()
         supermercados.append(supermercado)
-        escribeFichero(supermercados)
+        escribeFichero(ruta,supermercados)
         return supermercado, 201
     return {"error": "Request must be json"}, 415
+
+@supermercadosBP.put("/<int:id>")
+@supermercadosBP.patch("/<int:id>")
+@jwt_required()
+def update_supermercado(id):
+    if request.is_json:
+        supermercados = leeFichero(ruta)
+        newSupermercado = request.get_json()
+        for supermercado in supermercados:
+            if supermercado["Id"] == id:
+                for element in newSupermercado:
+                    supermercado[element] = newSupermercado[element]
+                return newSupermercado, 200
+    return {"error": "Request must be json"}, 415
+
+@supermercadosBP.delete("/<int:id>")
+@jwt_required()
+def delete_supermercados(id):
+    supermercados = leeFichero(ruta)
+    for supermercado in supermercados:
+        if supermercado["Id"] == id:
+            supermercados.remove(supermercado)
+            escribeFichero(ruta,supermercados)
+            return "{}", 200
+    return {"error": "Director not found"}, 404
 
 def findNextId():
     supermercados = leeFichero(ruta)

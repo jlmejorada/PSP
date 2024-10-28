@@ -1,6 +1,7 @@
 from flask import Blueprint, jsonify, request
-from app.ficheros.leer_escribir import *
+from flask_jwt_extended import jwt_required
 
+from app import directores
 from app.ficheros.leer_escribir import leeFichero, escribeFichero
 
 directoresBP = Blueprint('directores', __name__)
@@ -38,15 +39,41 @@ def get_directores_supermercados(Id):
 
 
 @directoresBP.post('/')
+@jwt_required()
 def add_director():
-    directores = leeFichero()
+    directores = leeFichero(ruta)
     if request.is_json:
         director = request.get_json(ruta)
         director['Id'] = findNextId()
         directores.append(director)
-        escribeFichero(directores)
+        escribeFichero(ruta, directores)
         return director, 201
     return {"error": "Request must be json"}, 415
+
+@directoresBP.put("/<int:id>")
+@directoresBP.patch("<int:id>")
+@jwt_required()
+def update_director(id):
+    if request.is_json:
+        directores = leeFichero(ruta)
+        newDirector = request.get_json()
+        for director in directores:
+            if director["Id"] == id:
+                for element in newDirector:
+                    director[element] = newDirector[element]
+                return newDirector, 200
+    return {"error": "Request must be json"}, 415
+
+@directoresBP.delete("/<int:id>")
+@jwt_required()
+def delete_director(id):
+    directores = leeFichero(ruta)
+    for director in directores:
+        if director["Id"] == id:
+            directores.remove(director)
+            escribeFichero(ruta,directores)
+            return "{}", 200
+    return {"error": "Director not found"}, 404
 
 
 def findNextId():
