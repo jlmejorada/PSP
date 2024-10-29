@@ -1,5 +1,5 @@
-import Supermercados as Supermercados
-import Directores as Directores
+import Directores
+import Supermercados
 
 def menu():
     print("\n--- Menú ---")
@@ -11,10 +11,10 @@ def menu():
 def Main():
     menu()
     opc = input("Selecciona una opción: ")
-    while(opc!="0"):
+    while opc!="0":
         match opc:
             case "1":
-                Directores.printMenuDirectores()
+                Directores.printMenudirectores()
                 opc = input("Selecciona una opción: ")
                 Directores.menuDirectores(opc)
             case "2":
