@@ -62,7 +62,7 @@ def printMenusupermercados():
 """
 Funcionalidad del menu de las supermercados
 """
-def menusupermercados(opc):
+def menuSupermercados(opc):
     match opc:
         case "1":
             print(getsupermercados())

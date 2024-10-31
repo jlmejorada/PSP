@@ -67,7 +67,7 @@ def printMenudirectores():
     print("\n--- Menú ---")
     print("1. Mostrar directores")
     print("2. Buscar un director")
-    print("3. Mostrar asignaturas de un director")
+    print("3. Mostrar Supermercados de un director")
     print("4. Añadir director")
     print("5. Actualizar director")
     print("6. Eliminar director")
@@ -76,7 +76,7 @@ def printMenudirectores():
 """
 funcionalidad del menu de los directores
 """
-def menudirectores(opc):
+def menuDirectores(opc):
     match opc:
         case "1":
             print(getdirectores())
@@ -85,7 +85,7 @@ def menudirectores(opc):
             print(getdirector(id))
         case "3":
             id = int(input("Introduce el id del director: "))
-            print(getdirectorAsignaturas(id))
+            print(getdirectorsupermercados(id))
         case "4":
             nuevo_director = datosdirector()
             print(postdirector(nuevo_director))
