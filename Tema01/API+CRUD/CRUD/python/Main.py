@@ -1,5 +1,7 @@
 import Directores
 import Supermercados
+from python.Acceso import login
+
 
 def menu():
     print("\n--- Menú ---")
@@ -9,6 +11,7 @@ def menu():
 
 
 def Main():
+    token = login()
     menu()
     opc = input("Selecciona una opción: ")
     while opc!="0":
@@ -16,16 +19,18 @@ def Main():
             case "1":
                 Directores.printMenudirectores()
                 opc = input("Selecciona una opción: ")
-                Directores.menuDirectores(opc)
+                Directores.menuDirectores(opc, token)
             case "2":
-                Supermercados.printMenuSupermercados()
+                Supermercados.printMenusupermercados()
                 opc = input("Selecciona una opción: ")
-                Supermercados.menuSupermercados(opc)
+                Supermercados.menuSupermercados(opc, token)
             case _:
                 print("Opcion invalida")
         menu()
         opc = input("Selecciona una opción: ")
     print("Saliendo...")
+
+
 
 if __name__ == '__main__':
     Main()

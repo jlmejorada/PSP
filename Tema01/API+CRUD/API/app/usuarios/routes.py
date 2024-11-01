@@ -32,8 +32,6 @@ def loginUsuario():
         for archivoUsuario in usuarios:
             if archivoUsuario['Usuario'] == nomUsuario:
                 archivoContrasena = archivoUsuario['Contrasena']
-                print(contUsuario)
-                print(archivoContrasena)
                 if bcrypt.checkpw(contUsuario, bytes.fromhex(archivoContrasena)):
                     token = create_access_token(identity= nomUsuario)
                     return {'token': token}, 200

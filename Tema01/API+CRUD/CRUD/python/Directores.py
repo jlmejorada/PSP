@@ -1,4 +1,5 @@
 from pip._vendor import requests
+from json import dumps
 
 apiUrl = "http://localhost:5050/"
 
@@ -7,57 +8,59 @@ Muestra todos los directores
 """
 def getdirectores():
     urldirectores = apiUrl + "directores"
-    response = str(requests.get(urldirectores).json())
+    response = dumps(requests.get(urldirectores).json(), indent=4)
     return response
 """
 Muestra un director
 """
 def getdirector(id):
     urldirectores = apiUrl + "directores/" + str(id)
-    response = str(requests.get(urldirectores).json())
+    response = dumps(requests.get(urldirectores).json(), indent=4)
     return response
 """
 Muestra las asignaturas que imparte un director
 """
-def getdirectorAsignaturas(id):
-    urldirectores = apiUrl + "directores/" + str(id) + "/asignaturas"
-    response = str(requests.get(urldirectores).json())
+def getdirectorsupermercados(id):
+    urldirectores = apiUrl + "directores/" + str(id) + "/supermercados"
+    response = dumps(requests.get(urldirectores).json(), indent=4)
     return response
 
 """
 Anade un nuevo director
 """
-def postdirector(director):
+def postdirector(director, token):
     urlNuevodirector = apiUrl + "directores"
-    response = requests.post(urlNuevodirector, json=director)
+    headers = {"Content-Type": "application/json", "Authorization": "Bearer " + token}
+    response = requests.post(urlNuevodirector, json=director, headers=headers)
     return response
 
 """
 Modifica un director
 """
-def putdirector(id, director):
+def putdirector(id, director, token):
     urlModificadirector = apiUrl + "directores/" + str(id)
-    response = str(requests.put(urlModificadirector, json=director).json())
+    headers = {"Content-Type": "application/json", "Authorization": "Bearer " + token}
+    response = str(requests.put(urlModificadirector, json=director, headers=headers).json())
     return response
 
 """
 Borra a un director
 """
-def deletedirector(id):
+def deletedirector(id, token):
     urlBorradirector = apiUrl + "directores/" + str(id)
-    response = str(requests.delete(urlBorradirector).json())
+    headers = {"Content-Type": "application/json", "Authorization": "Bearer " + token}
+    response = str(requests.delete(urlBorradirector, headers=headers).json())
     return response
 
 """
 Pregunta datos de un director nuevo
 """
 def datosdirector():
+    dni = input("Introduce el dni: ")
     nombre = input("Introduce el nombre: ")
-    apellidos = input("Introduce el apellidos: ")
-    telefono = input("Introduce el telefono: ")
-    direccion = input("Introduce el direccion: ")
-    cc = input("Introduce el Cuenta Bancaria: ")
-    director = {"nombre": nombre, "apellidos": apellidos, "telefono": telefono, "direccion": direccion,"cc": cc}
+    apellidos = input("Introduce los apellidos: ")
+    email = input("Introduce el email: ")
+    director = {"DNI":dni,"Nombre": nombre, "Apellidos": apellidos,"Email": email}
     return director
 
 """
@@ -76,7 +79,7 @@ def printMenudirectores():
 """
 funcionalidad del menu de los directores
 """
-def menuDirectores(opc):
+def menuDirectores(opc, token):
     match opc:
         case "1":
             print(getdirectores())
@@ -88,13 +91,13 @@ def menuDirectores(opc):
             print(getdirectorsupermercados(id))
         case "4":
             nuevo_director = datosdirector()
-            print(postdirector(nuevo_director))
+            print(postdirector(nuevo_director, token))
         case "5":
             id = int(input("Introduce el id del director a actualizar: "))
             actualiza_director = datosdirector()
-            print(putdirector(id, actualiza_director))
+            print(putdirector(id, actualiza_director, token))
         case "6":
             id = int(input("Introduce el id del director a borrar: "))
-            print(deletedirector(id))
+            print(deletedirector(id, token))
         case _:
             print("Opcion invalida")
