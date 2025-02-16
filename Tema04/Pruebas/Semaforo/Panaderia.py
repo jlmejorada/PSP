@@ -1,34 +1,37 @@
-from threading import Thread, Lock
+from threading import Thread, Semaphore
 from time import sleep
 
 
 class Panaderia:
     cantidadIni = 7
     cantidad = cantidadIni
-    lock = Lock()
+    sf = Semaphore(cantidadIni)  # Controlamos la cantidad de panes con el semáforo
 
     @classmethod
     def compraPan(cls):
-        with cls.lock:  # Usamos `with` para manejar el Lock de forma segura
-            if cls.cantidad > 0:
-                print(f"Panadería: Se vendió un pan. Quedan {cls.cantidad - 1} panes.")
-                cls.cantidad -= 1
-                return True
-            else:
-                print("Panadería: No hay más pan disponible.")
-                return False
+        Panaderia.sf.acquire()  # Bloqueamos un recurso (un pan)
+        if cls.cantidad > 0:
+            cls.cantidad -= 1
+            print(f"Panadería: Se vendió un pan. Quedan {cls.cantidad} panes.")
+            sleep(1)  # Simula el tiempo de compra
+            Panaderia.sf.release()  # Liberamos el recurso
+            return True
+        else:
+            print("Panadería: No hay más pan disponible.")
+            Panaderia.sf.release()  # Aunque no haya pan, liberamos el recurso para evitar deadlocks
+            return False
 
 
 class Comprador(Thread):
 
     def __init__(self, nombre):
-        super().__init__(name=str(nombre))  # Convertimos nombre a string para evitar problemas
+        super().__init__(name=str(nombre))
 
     def run(self):
         print(f"Comprador {self.name} intentando comprar pan...")
         if Panaderia.compraPan():
-            sleep(1)
             print(f"Comprador {self.name} ha comprado pan")
+            sleep(2)
         else:
             print(f"Comprador {self.name} no pudo comprar pan porque ya no hay")
 
